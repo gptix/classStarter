@@ -49,14 +49,7 @@
   (loop :for str :in *table-defs*
 	:do (execute-non-query *db* str)))
 
-
- "insert into lesson_definition (name, hyperlink, description)
-values (?, ?, ?)" "Arduino" "hyperlink" "Cool."
-
-
-(make-lesson "Arduino" "www.freeeside-atlanta.org")
-
-
+      
 
 (defun add-lesson-definition (name hyperlink description)
   (execute-non-query *db*
