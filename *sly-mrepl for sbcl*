@@ -1,0 +1,436 @@
+; 
+;  ( \
+;   \ \
+;   / /                |\\
+;  / /     .-`````-.   / ^`-.
+;  \ \    /         \_/  {|} `o
+;   \ \  /   .---.   \\ _  ,--'
+;    \ \/   /     \,  \( `^^^   Hack and be merry!
+;     \   \/\      (\  )
+;      \   ) \     ) \ \
+;       ) /__ \__  ) (\ \___
+; jgs  (___)))__))(__))(__)))
+; 
+; Dedicated output stream setup (port 33227)
+; Redirecting all output to this MREPL
+; SLY 1.0.0-beta-3 (#<MREPL mrepl-1-1>)
+To load "sqlite":
+  Load 1 ASDF system:
+    sqlite
+; Loading "sqlite"
+.
+
+; file: /tmp/slimeqde7wk
+; in: SETF *DB*
+;     (SETF CLASSSTARTER::*DB* (SQLITE:CONNECT "/home/gt/test.sqlite3"))
+; --> SETQ 
+; ==>
+;   (SETQ CLASSSTARTER::*DB* (SQLITE:CONNECT "/home/gt/test.sqlite3"))
+; 
+; caught WARNING:
+;   undefined variable: *DB*
+; 
+; compilation unit finished
+;   Undefined variable:
+;     *DB*
+;   caught 1 WARNING condition
+; 
+; caught ERROR:
+;   READ error during COMPILE-FILE:
+;   
+;     Comma not inside a backquote.
+;   
+;       Line: 1, Column: 24, File-Position: 23
+;   
+;       Stream: #<SB-INT:FORM-TRACKING-STREAM for "file /tmp/slimepgybLj" {10022B0333}>
+; 
+; compilation unit finished
+;   caught 1 fatal ERROR condition
+;   caught 1 ERROR condition
+
+; file: /tmp/slimeavTS8y
+; in: DEFUN MAKE-TABLES
+;     (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+; 
+; caught WARNING:
+;   undefined variable: *DB*
+
+;     (LOOP :FOR CLASSSTARTER::STR :IN CLASSSTARTER::*TABLE-DEFS*
+;           :DO (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR))
+; --> BLOCK 
+; ==>
+;   (LET ((CLASSSTARTER::STR NIL) (#:LOOP-LIST-0 CLASSSTARTER::*TABLE-DEFS*))
+;     (DECLARE (TYPE LIST #:LOOP-LIST-0))
+;     (TAGBODY
+;      SB-LOOP::NEXT-LOOP
+;       (WHEN (ENDP #:LOOP-LIST-0) (GO SB-LOOP::END-LOOP))
+;       (SB-LOOP::LOOP-DESETQ CLASSSTARTER::STR (CAR #:LOOP-LIST-0))
+;       (SB-LOOP::LOOP-DESETQ #:LOOP-LIST-0 (CDR #:LOOP-LIST-0))
+;       (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+;       (GO SB-LOOP::NEXT-LOOP)
+;      SB-LOOP::END-LOOP))
+; 
+; caught WARNING:
+;   undefined variable: *TABLE-DEFS*
+; 
+; compilation unit finished
+;   Undefined variables:
+;     *DB* *TABLE-DEFS*
+;   caught 2 WARNING conditions
+
+CL-USER> (in-package :classstarter)
+#<PACKAGE "CLASSSTARTER">
+CLASSSTARTER> (make-tables)
+; Debugger entered on #<UNBOUND-VARIABLE *TABLE-DEFS* {100284D003}>
+[1] CLASSSTARTER> 
+; Evaluation aborted on #<UNBOUND-VARIABLE *TABLE-DEFS* {100284D003}>
+; 
+; caught ERROR:
+;   READ error during COMPILE-FILE:
+;   
+;     Comma not inside a backquote.
+;   
+;       Line: 1, Column: 24, File-Position: 23
+;   
+;       Stream: #<SB-INT:FORM-TRACKING-STREAM for "file /tmp/slimefAYeB2" {1002B2D613}>
+; 
+; compilation unit finished
+;   caught 1 fatal ERROR condition
+;   caught 1 ERROR condition
+CLASSSTARTER> *readtable*
+#<READTABLE {1000024FE3}>
+CLASSSTARTER> *table-defs*
+; Debugger entered on #<UNBOUND-VARIABLE *TABLE-DEFS* {1002F49BC3}>
+[1] CLASSSTARTER> 
+; Evaluation aborted on #<UNBOUND-VARIABLE *TABLE-DEFS* {1002F49BC3}>
+
+; file: /tmp/slimeFuQciP
+; in: SETF *DB*
+;     (SETF CLASSSTARTER::*DB* (SQLITE:CONNECT "/home/gt/test.sqlite3"))
+; --> SETQ 
+; ==>
+;   (SETQ CLASSSTARTER::*DB* (SQLITE:CONNECT "/home/gt/test.sqlite3"))
+; 
+; caught WARNING:
+;   undefined variable: *DB*
+; 
+; compilation unit finished
+;   Undefined variable:
+;     *DB*
+;   caught 1 WARNING condition
+; 
+; caught ERROR:
+;   READ error during COMPILE-FILE:
+;   
+;     end of file on #<SB-INT:FORM-TRACKING-STREAM for "file /tmp/slimeEqjJpO" {1003147E93}>
+;   
+;     (in form starting at line: 1, column: 7, position: 7)
+
+; file: /tmp/slimeEqjJpO
+; in:
+;     CLASSSTARTER::-DEFS*
+; 
+; caught WARNING:
+;   undefined variable: -DEFS*
+; 
+; compilation unit finished
+;   Undefined variable:
+;     -DEFS*
+;   caught 1 fatal ERROR condition
+;   caught 1 ERROR condition
+;   caught 1 WARNING condition
+
+; file: /tmp/slimeTzuai0
+; in: DEFUN MAKE-TABLES
+;     (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+; 
+; caught WARNING:
+;   undefined variable: *DB*
+
+;     (LOOP :FOR CLASSSTARTER::STR :IN CLASSSTARTER::*TABLE-DEFS*
+;           :DO (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR))
+; --> BLOCK 
+; ==>
+;   (LET ((CLASSSTARTER::STR NIL) (#:LOOP-LIST-0 CLASSSTARTER::*TABLE-DEFS*))
+;     (DECLARE (TYPE LIST #:LOOP-LIST-0))
+;     (TAGBODY
+;      SB-LOOP::NEXT-LOOP
+;       (WHEN (ENDP #:LOOP-LIST-0) (GO SB-LOOP::END-LOOP))
+;       (SB-LOOP::LOOP-DESETQ CLASSSTARTER::STR (CAR #:LOOP-LIST-0))
+;       (SB-LOOP::LOOP-DESETQ #:LOOP-LIST-0 (CDR #:LOOP-LIST-0))
+;       (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+;       (GO SB-LOOP::NEXT-LOOP)
+;      SB-LOOP::END-LOOP))
+; 
+; caught WARNING:
+;   undefined variable: *TABLE-DEFS*
+; 
+; compilation unit finished
+;   Undefined variables:
+;     *DB* *TABLE-DEFS*
+;   caught 2 WARNING conditions
+CLASSSTARTER> *table-defs*
+; Debugger entered on #<UNBOUND-VARIABLE *TABLE-DEFS* {100311E453}>
+[1] CLASSSTARTER> 
+; Evaluation aborted on #<UNBOUND-VARIABLE *TABLE-DEFS* {100311E453}>
+CLASSSTARTER> (setf *table-defs* (list "create table person
+(id integer primary key, 
+name not null, 
+paypal_email not null,
+other_email null,
+phone null, 
+type not_null" ,
+
+"create table lesson_def
+(id integer primary key, 
+name not null, 
+hyperlink null,
+descriptiom not null" , 
+
+"create table scheduled_event
+(id integer primary key, 
+lesson-def-id ,
+date , 
+venue ,
+min-rev,
+max-students,
+suggested-min,
+FOREIGN KEY(lesson-definition) REFERENCES lesson-definition(id)"))
+; Debugger entered on #<SB-INT:SIMPLE-READER-ERROR "Comma not inside a backquote." {100336D963}>
+[1] CLASSSTARTER> 
+; Evaluation aborted on #<SB-INT:SIMPLE-READER-ERROR "Comma not inside a backquote." {100336D963}>
+CLASSSTARTER> (setf *table-defs* (list "create table person
+(id integer primary key, 
+name not null, 
+paypal_email not null,
+other_email null,
+phone null, 
+type not_null" ,
+
+"create table lesson_def
+(id integer primary key, 
+name not null, 
+hyperlink null,
+descriptiom not null" , 
+
+"create table scheduled_event
+(id integer primary key, 
+lesson-def-id ,
+date , 
+venue ,
+min-rev,
+max-students,
+suggested-min,
+FOREIGN KEY(lesson-definition) REFERENCES lesson-definition(id)"))
+; Debugger entered on #<SB-INT:SIMPLE-READER-ERROR "Comma not inside a backquote." {100351E303}>
+[1] CLASSSTARTER> 
+; Evaluation aborted on #<SB-INT:SIMPLE-READER-ERROR "Comma not inside a backquote." {100351E303}>
+
+; file: /tmp/slimeZW6Kpo
+; in: DEFUN MAKE-TABLES
+;     (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+; 
+; caught WARNING:
+;   undefined variable: *DB*
+
+;     (LOOP :FOR CLASSSTARTER::STR :IN CLASSSTARTER::*TABLE-DEFS*
+;           :DO (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR))
+; --> BLOCK 
+; ==>
+;   (LET ((CLASSSTARTER::STR NIL) (#:LOOP-LIST-0 CLASSSTARTER::*TABLE-DEFS*))
+;     (DECLARE (TYPE LIST #:LOOP-LIST-0))
+;     (TAGBODY
+;      SB-LOOP::NEXT-LOOP
+;       (WHEN (ENDP #:LOOP-LIST-0) (GO SB-LOOP::END-LOOP))
+;       (SB-LOOP::LOOP-DESETQ CLASSSTARTER::STR (CAR #:LOOP-LIST-0))
+;       (SB-LOOP::LOOP-DESETQ #:LOOP-LIST-0 (CDR #:LOOP-LIST-0))
+;       (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+;       (GO SB-LOOP::NEXT-LOOP)
+;      SB-LOOP::END-LOOP))
+; 
+; caught WARNING:
+;   undefined variable: *TABLE-DEFS*
+; 
+; compilation unit finished
+;   Undefined variables:
+;     *DB* *TABLE-DEFS*
+;   caught 2 WARNING conditions
+
+; file: /tmp/slime4Z71dC
+; in: DEFUN MAKE-TABLES
+;     (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+; 
+; caught WARNING:
+;   undefined variable: *DB*
+
+;     (LOOP :FOR CLASSSTARTER::STR :IN CLASSSTARTER::*TABLE-DEFS*
+;           :DO (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR))
+; --> BLOCK 
+; ==>
+;   (LET ((CLASSSTARTER::STR NIL) (#:LOOP-LIST-0 CLASSSTARTER::*TABLE-DEFS*))
+;     (DECLARE (TYPE LIST #:LOOP-LIST-0))
+;     (TAGBODY
+;      SB-LOOP::NEXT-LOOP
+;       (WHEN (ENDP #:LOOP-LIST-0) (GO SB-LOOP::END-LOOP))
+;       (SB-LOOP::LOOP-DESETQ CLASSSTARTER::STR (CAR #:LOOP-LIST-0))
+;       (SB-LOOP::LOOP-DESETQ #:LOOP-LIST-0 (CDR #:LOOP-LIST-0))
+;       (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+;       (GO SB-LOOP::NEXT-LOOP)
+;      SB-LOOP::END-LOOP))
+; 
+; caught WARNING:
+;   undefined variable: *TABLE-DEFS*
+; 
+; compilation unit finished
+;   Undefined variables:
+;     *DB* *TABLE-DEFS*
+;   caught 2 WARNING conditions
+CLASSSTARTER> (make-tables)
+; Debugger entered on #<UNBOUND-VARIABLE *TABLE-DEFS* {10039B7FB3}>
+[1] CLASSSTARTER> 
+; Evaluation aborted on #<UNBOUND-VARIABLE *TABLE-DEFS* {10039B7FB3}>
+CLASSSTARTER> (setf *table-defs* (list "create table person 
+(id integer primary key, 
+ name not null, 
+ paypal_email not null,
+ other_email null,
+ phone null, 
+ type not_null)" 
+
+ "create table lesson_def
+ (id integer primary key, 
+ name not null, 
+ hyperlink null,
+ descriptiom not null)" 
+
+ "create table scheduled_event
+ (id integer primary key, 
+ lesson-def-id not null,
+ date not null, 
+ venue not null,
+ min_rev not null,
+ max_students not null,
+ suggested-min not_null,
+ FOREIGN KEY(lesson-definition) REFERENCES lesson-definition(id) )"))
+; in: SETF *TABLE-DEFS*
+;     (SETF CLASSSTARTER::*TABLE-DEFS*
+;             (LIST "create table person 
+;   (id integer primary key, 
+;    name not null, 
+;    paypal_email not null,
+;    other_email null,
+;    phone null, 
+;    type not_null)"
+;                   "create table lesson_def
+;    (id integer primary key, 
+;    name not null, 
+;    hyperlink null,
+;    descriptiom not null)"
+;                   #<(SIMPLE-ARRAY CHARACTER (249)) create table scheduled_event
+;    (id integer primary key, 
+;    lesson-def-id not null,
+;    date not null, 
+;    venue not null,
+;    min_rev not null,
+;    max_students not null,
+;    suggested-min not_null,
+;    FOREIGN KEY(less... {10045C860F}>))
+; ==>
+;   (SETQ CLASSSTARTER::*TABLE-DEFS*
+;           (LIST "create table person 
+; (id integer primary key, 
+;  name not null, 
+;  paypal_email not null,
+;  other_email null,
+;  phone null, 
+;  type not_null)"
+;                 "create table lesson_def
+;  (id integer primary key, 
+;  name not null, 
+;  hyperlink null,
+;  descriptiom not null)"
+;                 #<(SIMPLE-ARRAY CHARACTER (249)) create table scheduled_event
+;  (id integer primary key, 
+;  lesson-def-id not null,
+;  date not null, 
+;  venue not null,
+;  min_rev not null,
+;  max_students not null,
+;  suggested-min not_null,
+;  FOREIGN KEY(less... {10045C860F}>))
+; 
+; caught WARNING:
+;   undefined variable: *TABLE-DEFS*
+; 
+; compilation unit finished
+;   Undefined variable:
+;     *TABLE-DEFS*
+;   caught 1 WARNING condition
+("create table person 
+(id integer primary key, 
+ name not null, 
+ paypal_email not null,
+ other_email null,
+ phone null, 
+ type not_null)"
+ "create table lesson_def
+ (id integer primary key, 
+ name not null, 
+ hyperlink null,
+ descriptiom not null)"
+ "create table scheduled_event
+ (id integer primary key, 
+ lesson-def-id not null,
+ date not null, 
+ venue not null,
+ min_rev not null,
+ max_students not null,
+ suggested-min not_null,
+ FOREIGN KEY(lesson-definition) REFERENCES lesson-definition(id) )")
+CLASSSTARTER> (make-tables)
+; Debugger entered on #<SQLITE-ERROR "Could not prepare an sqlite statement." {10046DFDF3}>
+
+; file: /tmp/slimeRVfzPQ
+; in: DEFUN MAKE-TABLES
+;     (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+; 
+; caught WARNING:
+;   undefined variable: *DB*
+
+;     (LOOP :FOR CLASSSTARTER::STR :IN CLASSSTARTER::*TABLE-DEFS*
+;           :DO (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR))
+; --> BLOCK 
+; ==>
+;   (LET ((CLASSSTARTER::STR NIL) (#:LOOP-LIST-0 CLASSSTARTER::*TABLE-DEFS*))
+;     (DECLARE (TYPE LIST #:LOOP-LIST-0))
+;     (TAGBODY
+;      SB-LOOP::NEXT-LOOP
+;       (WHEN (ENDP #:LOOP-LIST-0) (GO SB-LOOP::END-LOOP))
+;       (SB-LOOP::LOOP-DESETQ CLASSSTARTER::STR (CAR #:LOOP-LIST-0))
+;       (SB-LOOP::LOOP-DESETQ #:LOOP-LIST-0 (CDR #:LOOP-LIST-0))
+;       (SQLITE:EXECUTE-NON-QUERY CLASSSTARTER::*DB* CLASSSTARTER::STR)
+;       (GO SB-LOOP::NEXT-LOOP)
+;      SB-LOOP::END-LOOP))
+; 
+; caught WARNING:
+;   undefined variable: *TABLE-DEFS*
+; 
+; compilation unit finished
+;   Undefined variables:
+;     *DB* *TABLE-DEFS*
+;   caught 2 WARNING conditions
+[1] CLASSSTARTER> (make-tables)
+; Debugger entered on #<SQLITE-ERROR "Error while stepping an sqlite statement." {10049878B3}>
+[2] CLASSSTARTER> 
+; Evaluation aborted on #<SQLITE-ERROR "Error while stepping an sqlite statement." {10049878B3}>
+[1] CLASSSTARTER> 
+; Evaluation aborted on #<SQLITE-ERROR "Could not prepare an sqlite statement." {10046DFDF3}>
+CLASSSTARTER> (make-tables)
+; Debugger entered on #<SQLITE-ERROR "Could not prepare an sqlite statement." {1004CFDCE3}>
+[1] CLASSSTARTER> 
+; Evaluation aborted on #<SQLITE-ERROR "Could not prepare an sqlite statement." {1004CFDCE3}>
+CLASSSTARTER> 
+Process sly-pty-1-1 killed
+
+; Server side close
+; --------------------------------------------------------

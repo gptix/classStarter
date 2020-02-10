@@ -1,3 +1,19 @@
+(setf lesson-records ())
+
+(let ((lesson-serializer 0))
+  (defun new-lesson-serial () (incf lesson-serializer))
+  (defun reset-lesson-serializer () (setq serializer 0)))
+
+(defun make-lesson (name hyperlink)
+  (push (list :lesson-serial (new-lesson-serial)
+	      :name name
+	      :hyperlink hyperlink)
+	lesson-records))
+
+(make-lesson "Arduino" "www.freeeside-atlanta.org")
+;;--------------------------------------------------------
+
+
 (setf person-records ())
 
 (let ((person-serializer 0))
@@ -80,4 +96,12 @@ the name of the bidder, the number of seats desired, and the amount bid per seat
 				  (lambda (r) (= lesson-event-serial (getf r :lesson-event-serial)))
 				  lesson-event-records))
 			    :bids))))
-  lesson-event-serial)
+; lesson-event-serial
+
+#| 
+Specify a lesson 
+Offer a lesson session
+Bid on a lesson seat
+View report on 
+  - will the class be held? has the class met revenue goals
+  - Is my bid successful
