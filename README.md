@@ -8,7 +8,7 @@ I really like Common Lisp, but I am only a hobby coder. I will create a project 
 
 # classStarter What Is
 
-classStarter will be an auction system for a market of seats at classes at my hackerspace, [Freeside Atlanta](https://www.freesideatlanta.org/).
+classStarter will be an auction system, for a market of seats at classes at my hackerspace, [Freeside Atlanta](https://www.freesideatlanta.org/).
 
 ## classStarter Where
 
