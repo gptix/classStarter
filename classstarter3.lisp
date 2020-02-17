@@ -14,8 +14,6 @@ https://lispcookbook.github.io/cl-cookbook/databases.html
    (phone-number :col-type (or (:varchar 15) :null))
    (role :col-type role)))
 
-(mito:ensure-table-exists 'role)
-
 (mito:deftable role ()
   ((name :col-type (:varchar 64))))
 
