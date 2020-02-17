@@ -1,1 +1,0 @@
-(setf lesson-market '(:lesson-id 1 :seats 10 :min-price 1 :min-rev 100 :max-seats 12 :bids ()))
