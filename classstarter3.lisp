@@ -3,34 +3,28 @@ https://github.com/fukamachi/mito/
 https://lispcookbook.github.io/cl-cookbook/databases.html
 |#
 
-
-
-
 (ql:quickload 'mito)
 
 (mito:connect-toplevel :sqlite3 :database-name "/home/gt/test.sqlite3")
 
-(mito:deftable person2 ()
+(mito:deftable person ()
   ((name :col-type (:varchar 64))
    (email :col-type (or (:varchar 128) :null)) 
    (paypal-email :col-type (or (:varchar 128) :null))
    (phone-number :col-type (or (:varchar 15) :null))
    (role :col-type role)))
 
-
 (mito:ensure-table-exists 'role)
 
 (mito:deftable role ()
-  ((name :col-type (:varchar 64))
-   ))
+  ((name :col-type (:varchar 64))))
 
 (mito:deftable event-class ()
   ((name :col-type (:varchar 64))
    (description  :col-type :bytea)
    (materials  :col-type :bytea)
    (prerequisites  :col-type :bytea)
-   (time-required-minutes :col-type :integer)
-))
+   (time-required-minutes :col-type :integer)))
 
 (mito:deftable venue ()
   ((name :col-type (:varchar 64))))
@@ -49,3 +43,9 @@ https://lispcookbook.github.io/cl-cookbook/databases.html
    (attendee :col-type person)
    (seat-count :col-type :integer)
    (bid-per-seat :col-type :integer)))
+
+(mito:connect-toplevel :sqlite3 :database-name "/home/gt/test.sqlite3")
+
+(defun ensure-tables ()
+  (mapcar #'mito:ensure-table-exists '('person 'role 'event-class 'venue 'occurence 'bid)))
+
